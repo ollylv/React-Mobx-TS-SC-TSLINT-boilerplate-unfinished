@@ -1,19 +1,20 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import Button from '../ui/Button';
+import { observer } from 'mobx-react';
 
-class SideBar extends PureComponent<{ settings: any }> {
-  constructor(props: { settings: any }) {
-    super(props);
-  }
+export interface SettingProps {
+  color?: string;
+  size?: string;
+}
 
-  public render() {
+export const SideBar: React.SFC<SettingProps> = observer(
+  (props): JSX.Element => {
+    const { color } = props;
     return (
       <div>
-        These are settings {this.props.settings.color}
+        These are settings {color}
         This is a button <Button>Yeh</Button>
       </div>
     );
-  }
-}
-
-export default SideBar;
+  },
+);

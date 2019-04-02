@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import SideBar from './components/SideBar';
+import { SideBar } from './components/SideBar';
+import { inject, observer } from 'mobx-react';
+import { AppState } from './stores/AppState';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: green;
+    background-color: red;
   }
 `;
 
-class App extends Component {
-  public settings = {
-    color: 'red',
-  };
+export interface AppProps {
+  store?: AppState;
+}
 
-  public render() {
+@inject('store')
+@observer
+class App extends Component<AppProps, {}> {
+  public render(): JSX.Element {
     return (
       <div className="App">
         <GlobalStyle />
-        <SideBar settings={this.settings} />
+        <SideBar color={''} size={''} />
       </div>
     );
   }
