@@ -1,5 +1,5 @@
-import React from 'react';
-import Button from '../ui/Button';
+import React, { SFC } from 'react';
+import Button from '../ui/button';
 import { observer } from 'mobx-react';
 
 export interface SettingProps {
@@ -7,7 +7,7 @@ export interface SettingProps {
   size?: string;
 }
 
-export const SideBar: React.SFC<SettingProps> = observer(
+export const SideBar: SFC<SettingProps> = observer(
   (props): JSX.Element => {
     const { color } = props;
     return (

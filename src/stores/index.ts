@@ -1,1 +1,1 @@
-export { AppState } from './AppState';
+export { AppState } from './app-state';

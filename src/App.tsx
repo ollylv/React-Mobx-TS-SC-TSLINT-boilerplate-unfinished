@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { SideBar } from './components/SideBar';
 import { inject, observer } from 'mobx-react';
-import { AppState } from './stores/AppState';
+import { AppState } from './stores/app-state';
+import Preview from './views/preview';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,7 +21,7 @@ class App extends Component<AppProps, {}> {
     return (
       <div className="App">
         <GlobalStyle />
-        <SideBar color={''} size={''} />
+        <Preview />
       </div>
     );
   }
