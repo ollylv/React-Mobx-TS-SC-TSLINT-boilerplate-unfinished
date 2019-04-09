@@ -3,17 +3,18 @@ import Button from '../ui/button';
 import { observer } from 'mobx-react';
 
 export interface SettingProps {
-  color?: string;
-  size?: string;
+  content?: any;
+  layout?: any[];
+  style?: any;
 }
 
-export const SideBar: SFC<SettingProps> = observer(
+export const SideBar: React.FC<{ settings: SettingProps }> = observer(
   (props): JSX.Element => {
-    const { color } = props;
+    const { content, layout, style } = props;
+    console.log(content);
     return (
       <div>
-        These are settings {color}
-        This is a button <Button>Yeh</Button>
+        These are settings This is a button <Button>Yeh</Button>
       </div>
     );
   },

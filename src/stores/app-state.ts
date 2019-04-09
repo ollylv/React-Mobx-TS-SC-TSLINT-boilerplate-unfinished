@@ -2,10 +2,14 @@ import { observable, action } from 'mobx';
 
 export class AppState {
   @observable
-  public color = 'red';
+  public settings = {
+    layout: [],
+    style: {},
+    content: {},
+  };
 
   @action
-  public changeColor = (color: string) => {
-    this.color = color;
+  public setSettings = (settings: any) => {
+    this.settings = settings;
   };
 }
