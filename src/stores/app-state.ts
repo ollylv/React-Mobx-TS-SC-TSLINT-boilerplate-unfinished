@@ -1,7 +1,8 @@
 import { observable, action } from 'mobx';
 
 export interface Header {
-  title: string;
+  language: string;
+  name: string;
 }
 
 export interface Introduction {
@@ -10,8 +11,11 @@ export interface Introduction {
 export interface ReportKey {
   title: string;
 }
-export interface Charts {
-  title: string;
+
+export interface Chart {
+  language?: string;
+  name?: string;
+  imgUrl?: string;
 }
 export interface Question {
   title: string;
@@ -26,33 +30,46 @@ export interface Footer {
   title: string;
 }
 
-export interface SideBarSettings {
+export interface ISectionSettings {
   headers?: Header[];
   introductions?: Introduction[];
   reportKeys?: ReportKey[];
-  charts?: Charts[];
+  charts?: Chart[];
   questions?: Question[];
   scores?: Score[];
   competencies?: Competency[];
   footers?: Footer[];
 }
 
+export interface IGlobalSettings {
+  theme: string;
+}
+
 export class AppState {
   @observable
-  public sideBarSettings: SideBarSettings = {
-    headers: [{ title: 'dwawd' }],
+  public sectionSettings: ISectionSettings = {
+    headers: [{ language: 'EN', name: 'Header' }],
     introductions: [],
     reportKeys: [],
-    charts: [],
+    charts: [
+      { language: 'EN', name: 'summary', imgUrl: 'http://something.com' },
+      { language: 'EN', name: 'competency', imgUrl: 'http://something.com' },
+      { language: 'EN', name: 'detail', imgUrl: 'http://something.com' },
+    ],
     questions: [],
     scores: [],
     competencies: [],
     footers: [],
   };
 
+  @observable
+  public globalSettings: IGlobalSettings = {
+    theme: 'black',
+  };
+
   @action
-  public setSideBarSettings = (settings: SideBarSettings) => {
-    this.sideBarSettings = settings;
+  public setSectionSettings = (settings: ISectionSettings) => {
+    this.sectionSettings = settings;
   };
 }
 

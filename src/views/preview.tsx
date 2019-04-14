@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
 import styled from 'styled-components';
-import { SideBar } from '../components/side-bar';
+import SideBar from '../components/side-bar';
 import { PreviewBox } from '../components/preview-box';
-import { AppState } from '../stores/app-state';
 
 const View = styled('section')`
   width: 100%;
@@ -13,17 +11,9 @@ const View = styled('section')`
   align-items: stretch;
 `;
 
-export const Preview = inject('store')(
-  observer(
-    ({ store: appState }): JSX.Element => {
-      console.log(appState);
-      const { sideBarSettings } = appState;
-      return (
-        <View>
-          <SideBar settings={sideBarSettings} />
-          <PreviewBox />
-        </View>
-      );
-    },
-  ),
+export const Preview = (): JSX.Element => (
+  <View>
+    <SideBar />
+    <PreviewBox />
+  </View>
 );

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { inject, observer } from 'mobx-react';
-import { AppState } from './stores/app-state';
 import { Preview } from './views/preview';
 
 export const GlobalStyle = createGlobalStyle`
@@ -17,9 +15,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const App: React.SFC<{}> = (): JSX.Element => (
-  <>
-    <GlobalStyle />
-    <Preview />
-  </>
-);
+class App extends Component {
+  public render(): JSX.Element {
+    return (
+      <>
+        <GlobalStyle />
+        <Preview />
+      </>
+    );
+  }
+}
+
+export default App;

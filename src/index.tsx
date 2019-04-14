@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './App';
+import App from './App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react';
-import { AppState } from './stores';
+import { rootStore } from './stores';
 
-const appState = new AppState();
+// const appState = new AppState();
 
 ReactDOM.render(
-  <Provider store={appState}>
+  <Provider {...rootStore}>
     <App />
   </Provider>,
   document.getElementById('root'),

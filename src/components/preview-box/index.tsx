@@ -12,6 +12,4 @@ const Wrapper = styled.section`
   background: papayawhip;
 `;
 
-export const PreviewBox = inject('store')(
-  observer((): JSX.Element => <Wrapper>I am a wrapper</Wrapper>),
-);
+export const PreviewBox = observer((): JSX.Element => <Wrapper>I am a wrapper</Wrapper>);
