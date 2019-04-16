@@ -11,17 +11,10 @@ import { AppState } from '../../stores/app-state';
 import ApiStore from '../../stores/api-store';
 
 export const Wrapper = styled('div')`
-  width: 360px;
   display: flex;
   flex: 1;
   border: 1px solid #2a9fd8;
   background-color: #95bce1;
-`;
-
-export const SearchInput = styled('div')`
-  display: block;
-  width: 360px;
-  height: 15px;
 `;
 
 export interface IStore {
