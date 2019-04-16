@@ -41,6 +41,41 @@ export interface ISectionSettings {
   footers?: Footer[];
 }
 
+// interface ITitle {
+//   name: string;
+//   text: string;
+// }
+
+// interface ITextBox {
+//   name: string;
+//   text: string;
+// }
+
+// interface IPhoto {
+//   name: string;
+//   url: string;
+// }
+
+// interface ITitleWithTextBox {
+//   title: ITitle;
+//   textBox: ITextBox;
+// }
+
+// interface ITitleWithTextBoxAndPhoto extends ITitleWithTextBox {
+//   photo: IPhoto;
+// }
+
+// class TitleWithTextBox implements ITitleWithTextBox {
+//   public title = {
+//     name: 'heaferTitle',
+//     text: 'man Sossage',
+//   };
+//   public textBox = {
+//     name: 'textBoxTitle',
+//     text: 'man Sossage with text',
+//   };
+// }
+
 export interface IGlobalSettings {
   theme: string;
 }

@@ -4,14 +4,18 @@ import { Preview } from './views/preview';
 
 export const GlobalStyle = createGlobalStyle`
   body, html {
+    width: 100%;
     height: 100%;
   }
 
   body {
-    width: 100%;
     display: flex;
     padding: 4em;
     background: #eef6ff;
+  }
+
+  body > div {
+    width: 100%;
   }
 `;
 

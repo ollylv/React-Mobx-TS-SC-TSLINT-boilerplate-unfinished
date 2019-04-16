@@ -8,6 +8,7 @@ export interface Props {
 
 const Wrapper = styled.section`
   display: flex;
+  flex: 3;
   padding: 4em;
   background: papayawhip;
 `;
