@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 const Input = styled.div`
+  margin: 12px 6px;
   display: block;
-  width: 160px;
-  height: 40px;
-  border: 1px solid #2a9fd8;
-  background: rgba(0, 173, 255, 0.54);
+
+  input {
+    width: 180px;
+    height: 40px;
+    padding-left: 6px;
+    border: none;
+  }
 `;
 
 export default Input;

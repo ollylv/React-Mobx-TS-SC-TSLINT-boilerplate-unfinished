@@ -4,21 +4,24 @@ import SideBar from '../components/side-bar';
 import { PreviewBox } from '../components/preview-box';
 import { TopBar } from '../components/top-bar';
 
-const View = styled('section')`
-  width: 100%;
-  height: 100%;
-  padding: 18px;
+const View = styled.section`
+  min-height: 100vh;
   display: flex;
-  flex: 1 1 100%;
-  flex-wrap: wrap;
-  align-items: stretch;
-  box-sizing: border-box;
+  flex-direction: row;
+`;
+
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex: 5;
 `;
 
 export const Preview = (): JSX.Element => (
   <View>
-    <TopBar />
     <SideBar />
-    <PreviewBox />
+    <Wrapper>
+      <TopBar />
+      <PreviewBox />
+    </Wrapper>
   </View>
 );

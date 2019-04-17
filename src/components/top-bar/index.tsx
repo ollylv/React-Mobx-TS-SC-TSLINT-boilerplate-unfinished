@@ -6,9 +6,9 @@ import { Select } from '../global/select';
 export const Wrapper = styled.section`
   width: 100%;
   display: flex;
-  flex: 1;
-  border: 1px solid #2a9fd8;
-  background-color: #95bce1;
+  justify-content: space-between;
+  padding: 0 6px;
+  background-color: #eef6ff;
 `;
 
 const selectOptions = ['English', 'Russian', 'Latvian'];

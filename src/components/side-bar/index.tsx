@@ -4,17 +4,16 @@ import Button from '../ui/button';
 import { observer, inject } from 'mobx-react';
 import { Chart } from '../../stores/app-state';
 import { SectionMenu } from './section-menu';
-import { GlobalMenu } from './global-menu';
 import { ISectionSettings } from '../../stores/app-state';
 import { IGlobalSettings } from '../../stores/app-state';
 import { AppState } from '../../stores/app-state';
 import ApiStore from '../../stores/api-store';
+import { GlobalStylesMenu } from './global-styles-menu';
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled.div`
   display: flex;
   flex: 1;
-  border: 1px solid #2a9fd8;
-  background-color: #95bce1;
+  background-color: #eef6ff;
 `;
 
 export interface IStore {
@@ -29,8 +28,8 @@ export default class SideBar extends React.Component<IStore, object> {
     return (
       <Wrapper>
         <SectionMenu settings={sectionSettings} />
-        <GlobalMenu settings={globalSettings} />
-        This is a button <Button>Yeh</Button>
+        {/* <GlobalStylesMenu settings={globalSettings} /> */}
+        {/* This is a button <Button>Yeh</Button> */}
       </Wrapper>
     );
   }

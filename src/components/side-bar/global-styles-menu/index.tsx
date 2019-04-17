@@ -13,7 +13,7 @@ interface IProps {
   settings?: IGlobalSettings;
 }
 
-export const GlobalMenu = (props: IProps): JSX.Element => {
+export const GlobalStylesMenu = (props: IProps): JSX.Element => {
   console.log(props);
   return <Menu>This is Global</Menu>;
 };

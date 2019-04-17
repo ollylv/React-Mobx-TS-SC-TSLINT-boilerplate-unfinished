@@ -2,10 +2,14 @@ import styled from 'styled-components';
 
 const Select = styled.div`
   display: block;
-  width: 160px;
-  height: 40px;
-  border: 1px solid #2a9fd8;
-  background: rgba(0, 173, 255, 0.54);
+  margin: 12px 6px;
+
+  select {
+    width: 160px;
+    border: none;
+    height: 40px;
+    padding-left: 6px;
+  }
 `;
 
 export default Select;

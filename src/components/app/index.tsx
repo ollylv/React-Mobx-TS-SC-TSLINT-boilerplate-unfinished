@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { Preview } from './views/preview';
+import { Preview } from '../../views/preview';
 
 export const GlobalStyle = createGlobalStyle`
+   * {
+    box-sizing: border-box; 
+  }
+
   body, html {
     width: 100%;
-    height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   body {
-    display: flex;
-    padding: 4em;
-    background: #eef6ff;
-  }
-
-  body > div {
-    width: 100%;
+    min-height: 100vh;
   }
 `;
 

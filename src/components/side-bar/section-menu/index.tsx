@@ -6,8 +6,6 @@ export const Menu = styled('div')`
   display: flex;
   flex: 1;
   width: 360px;
-  border: 1px solid #2a9fd8;
-  background-color: #95bce1;
 `;
 
 interface IProps {
@@ -16,5 +14,5 @@ interface IProps {
 
 export const SectionMenu = (props: IProps): JSX.Element => {
   console.log(props);
-  return <Menu>This is menu</Menu>;
+  return <Menu>This is a Section Menu</Menu>;
 };

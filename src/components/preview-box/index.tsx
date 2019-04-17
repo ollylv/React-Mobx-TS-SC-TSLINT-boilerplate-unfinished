@@ -10,7 +10,8 @@ const Wrapper = styled.section`
   display: flex;
   flex: 3;
   padding: 4em;
-  background: papayawhip;
+  background: #fff;
+  box-shadow: 3px 3px 12px 0px #ccc;
 `;
 
 export const PreviewBox = observer((): JSX.Element => <Wrapper>I am a wrapper</Wrapper>);
