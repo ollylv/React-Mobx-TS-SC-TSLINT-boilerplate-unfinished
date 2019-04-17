@@ -11,6 +11,7 @@ import ApiStore from '../../stores/api-store';
 import { GlobalStylesMenu } from './global-styles-menu';
 
 export const Wrapper = styled.div`
+  max-width: 360px;
   display: flex;
   flex: 1;
   background-color: #eef6ff;

@@ -7,8 +7,9 @@ export interface Props {
 }
 
 const Wrapper = styled.section`
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex: 3;
   padding: 4em;
   background: #fff;
   box-shadow: 3px 3px 12px 0px #ccc;
