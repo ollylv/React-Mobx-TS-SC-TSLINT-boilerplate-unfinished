@@ -1,13 +1,16 @@
-import { AppState } from './app-state';
+import { SettingsStore } from './settings-store';
 import ApiStore from './api-store';
+import { ReportStore } from './report-store';
 
 class RootStore {
-  public appState: AppState;
+  public settingsStore: SettingsStore;
   public apiStore: ApiStore;
+  public reportStore: ReportStore;
 
   public constructor() {
-    this.appState = new AppState();
+    this.settingsStore = new SettingsStore();
     this.apiStore = new ApiStore();
+    this.reportStore = new ReportStore();
   }
 }
 

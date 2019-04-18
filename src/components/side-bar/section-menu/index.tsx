@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ISectionSettings } from '../../../stores/app-state';
+import { ISectionSettings } from '../../../stores/settings-store';
 
 export const Menu = styled('div')`
   display: flex;

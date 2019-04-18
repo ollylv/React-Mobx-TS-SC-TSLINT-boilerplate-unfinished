@@ -1,14 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Button from '../ui/button';
 import { observer, inject } from 'mobx-react';
-import { Chart } from '../../stores/app-state';
+import { Chart } from '../../stores/settings-store';
 import { SectionMenu } from './section-menu';
-import { ISectionSettings } from '../../stores/app-state';
-import { IGlobalSettings } from '../../stores/app-state';
-import { AppState } from '../../stores/app-state';
+import { ISectionSettings } from '../../stores/settings-store';
+import { IGlobalSettings } from '../../stores/settings-store';
+import { SettingsStore } from '../../stores/settings-store';
 import ApiStore from '../../stores/api-store';
 import { GlobalStylesMenu } from './global-styles-menu';
+import { ReportStore } from '../../stores/report-store';
 
 export const Wrapper = styled.div`
   max-width: 360px;
@@ -18,14 +19,15 @@ export const Wrapper = styled.div`
 `;
 
 export interface IStore {
-  appState?: AppState;
+  settingsStore?: SettingsStore;
+  reportStore?: ReportStore;
 }
 
-@inject('appState')
+@inject('settingsStore')
 @observer
-export default class SideBar extends React.Component<IStore, object> {
+export default class SideBar extends React.Component<IStore, {}> {
   public render(): JSX.Element {
-    const { sectionSettings, globalSettings } = this.props.appState;
+    const { sectionSettings, globalSettings } = this.props.settingsStore;
     return (
       <Wrapper>
         <SectionMenu settings={sectionSettings} />

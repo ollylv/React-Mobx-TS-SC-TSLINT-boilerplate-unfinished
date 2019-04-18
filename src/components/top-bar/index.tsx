@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Input } from '../global/input';
 import { Select } from '../global/select';
+import { inject, observer } from 'mobx-react';
+import { ReportStore } from '../../stores/report-store';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -17,25 +19,57 @@ const selectOptions = ['English', 'Russian', 'Latvian'];
 //   eventHandler(event, keyName);
 // };
 
-export const handleChange = (keyName: string) => (
-  event: React.ChangeEvent<HTMLInputElement>,
-): void => {
-  console.log(event.target.value);
-  console.log(keyName);
-};
+export interface IStore {
+  reportStore?: ReportStore;
+}
 
-const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>, keyName: string): void => {
-  console.log(event.target.value);
-  console.log(keyName);
-};
+@inject('reportStore')
+@observer
+export class TopBar extends React.Component<IStore, {}> {
+  public constructor(props: IStore) {
+    super(props);
+  }
+  public handleChange = (propertyKey: string) => (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    this.props.reportStore.setCurrentReport(propertyKey, event.target.value);
+    console.log(event.target.value);
+    console.log(propertyKey);
+  };
 
-export const TopBar = (): JSX.Element => {
-  return (
-    <Wrapper>
-      <Input eventHandler={handleChange} placeholder="Company Name" keyName="companyName" />
-      <Input eventHandler={handleChange} placeholder="Report Number" keyName="reportNumber" />
-      <Input eventHandler={handleChange} placeholder="Report Name" keyName="reportName" />
-      <Select eventHandler={handleSelect} keyName="langSelect" options={selectOptions} />
-    </Wrapper>
-  );
-};
+  public handleSelect = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+    propertyKey: string,
+  ): void => {
+    this.props.reportStore.setCurrentReport(propertyKey, event.target.value);
+    console.log(event.target.value);
+    console.log(propertyKey);
+  };
+
+  public render(): JSX.Element {
+    return (
+      <Wrapper>
+        <Input
+          eventHandler={this.handleChange}
+          placeholder="Company Name"
+          propertyKey="companyName"
+        />
+        <Input
+          eventHandler={this.handleChange}
+          placeholder="Report Number"
+          propertyKey="reportNumber"
+        />
+        <Input
+          eventHandler={this.handleChange}
+          placeholder="Report Name"
+          propertyKey="reportName"
+        />
+        <Select
+          eventHandler={this.handleSelect}
+          propertyKey="reportLanguage"
+          options={selectOptions}
+        />
+      </Wrapper>
+    );
+  }
+}

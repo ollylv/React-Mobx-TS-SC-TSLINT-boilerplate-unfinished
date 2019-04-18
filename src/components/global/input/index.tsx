@@ -5,13 +5,13 @@ interface IProps {
   eventHandler: (keyName?: string) => (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   type?: string;
-  keyName?: string;
+  propertyKey?: string;
 }
 
-export const Input = ({ eventHandler, placeholder, keyName }: IProps): JSX.Element => {
+export const Input = ({ eventHandler, placeholder, propertyKey }: IProps): JSX.Element => {
   return (
     <Wrapper>
-      <input type="text" placeholder={placeholder} onChange={eventHandler(keyName)} />
+      <input type="number" placeholder={placeholder} onChange={eventHandler(propertyKey)} />
     </Wrapper>
   );
 };

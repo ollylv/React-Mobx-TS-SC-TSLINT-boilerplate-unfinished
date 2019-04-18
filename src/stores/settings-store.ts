@@ -80,7 +80,7 @@ export interface IGlobalSettings {
   theme: string;
 }
 
-export class AppState {
+export class SettingsStore {
   @observable
   public sectionSettings: ISectionSettings = {
     headers: [{ language: 'EN', name: 'Header' }],
